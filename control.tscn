@@ -1,0 +1,92 @@
+[gd_scene load_steps=9 format=3 uid="uid://cesgju2vmhlry"]
+
+[ext_resource type="Texture2D" uid="uid://cvuldufvosyom" path="res://shelf.jpg" id="1_0fbet"]
+[ext_resource type="Texture2D" uid="uid://x5qwf1m3cu4" path="res://vhs.jpg" id="2_62e2m"]
+[ext_resource type="Script" uid="uid://dt7v417rfmt70" path="res://vhs2_mouse.gd" id="3_ee4bf"]
+[ext_resource type="Script" uid="uid://el8thpuqecxd" path="res://vhs1_mouse.gd" id="3_qtu10"]
+[ext_resource type="Script" uid="uid://cbnu7jm622od6" path="res://vhs3_mouse.gd" id="4_kbped"]
+[ext_resource type="Script" uid="uid://b0fh6aycmnrmw" path="res://vhs4_mouse.gd" id="5_fj5cn"]
+[ext_resource type="Script" uid="uid://bgx6g73swm7ok" path="res://vhs5_mouse.gd" id="6_iy58a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ee4bf"]
+size = Vector2(110.225, 205.753)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(583, 313)
+texture = ExtResource("1_0fbet")
+
+[node name="vhs2" type="Sprite2D" parent="."]
+position = Vector2(514, 170)
+scale = Vector2(0.408257, 0.408257)
+texture = ExtResource("2_62e2m")
+script = ExtResource("3_ee4bf")
+
+[node name="Area2D" type="Area2D" parent="vhs2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="vhs2/Area2D"]
+position = Vector2(1.22498, 0)
+shape = SubResource("RectangleShape2D_ee4bf")
+
+[node name="vhs3" type="Sprite2D" parent="."]
+position = Vector2(564, 170)
+scale = Vector2(0.408257, 0.408257)
+texture = ExtResource("2_62e2m")
+script = ExtResource("4_kbped")
+
+[node name="Area2D" type="Area2D" parent="vhs3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="vhs3/Area2D"]
+position = Vector2(1.22498, 0)
+shape = SubResource("RectangleShape2D_ee4bf")
+
+[node name="vhs4" type="Sprite2D" parent="."]
+position = Vector2(616, 170)
+scale = Vector2(0.408257, 0.408257)
+texture = ExtResource("2_62e2m")
+script = ExtResource("5_fj5cn")
+
+[node name="Area2D" type="Area2D" parent="vhs4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="vhs4/Area2D"]
+position = Vector2(1.22498, 0)
+shape = SubResource("RectangleShape2D_ee4bf")
+
+[node name="vhs5" type="Sprite2D" parent="."]
+position = Vector2(671, 170)
+scale = Vector2(0.408257, 0.408257)
+texture = ExtResource("2_62e2m")
+script = ExtResource("6_iy58a")
+
+[node name="Area2D" type="Area2D" parent="vhs5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="vhs5/Area2D"]
+position = Vector2(1.22498, 0)
+shape = SubResource("RectangleShape2D_ee4bf")
+
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("3_qtu10")
+
+[node name="vhs1" type="Sprite2D" parent="Node2D"]
+position = Vector2(460, 170)
+scale = Vector2(0.408257, 0.408257)
+texture = ExtResource("2_62e2m")
+
+[node name="Area2D" type="Area2D" parent="Node2D/vhs1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/vhs1/Area2D"]
+position = Vector2(1.22498, 0)
+shape = SubResource("RectangleShape2D_ee4bf")
+
+[connection signal="mouse_entered" from="vhs2/Area2D" to="vhs2" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="vhs2/Area2D" to="vhs2" method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="vhs3/Area2D" to="vhs3" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="vhs3/Area2D" to="vhs3" method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="vhs4/Area2D" to="vhs4" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="vhs4/Area2D" to="vhs4" method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="vhs5/Area2D" to="vhs5" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="vhs5/Area2D" to="vhs5" method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="Node2D/vhs1/Area2D" to="Node2D" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/vhs1/Area2D" to="Node2D" method="_on_area_2d_mouse_exited"]
